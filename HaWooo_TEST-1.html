@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-hant-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <title>test</title>
+    <style>
+      html {
+        font-family: sans-serif;
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        -ms-overflow-style: scrollbar;
+        -webkit-tap-highlight-color: transparent; }
+
+        *, *::before, *::after {
+              box-sizing: border-box;
+            }
+
+        body{
+          margin: 0;
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+          font-size: 1rem;
+          font-weight: 400;
+          line-height: 1.5;
+          background-color:#e6ebf3 ;
+        }
+        .box-shadows{
+          box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px;
+        }
+        .dropdown-toggle::after {
+          display: none;
+        }
+        .border-gray{
+          border: solid 2px #d8e2ef;
+        }
+        .text-warning{
+          color: #f57c38 !important;
+        }
+        .text-gray{
+          color: #d8e2ef !important;
+        }
+        .badge-success{
+          background-color: #00d27a  !important;
+        }
+        .btn-outline-secondary {
+          color: #6c757d;
+          background-color: transparent;
+          background-image: none;
+          border-color: #e2e2e2 !important; 
+        }
+        .btn-outline-secondary:hover {
+          color: #fff;
+          background-color: #6c757d;
+          border-color: #6c757d;
+        }
+        .border {
+          border: 1px solid #d8e2ef !important; 
+      }
+      .text-muted {
+        color: #6c757d !important;
+      }
+      .text-decoration-line-through {
+            text-decoration: line-through !important;
+        }
+      .card-title{
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+      }
+        .good-category{
+          font-size: 0.9rem !important;
+          font-weight: 600;
+        }
+        .good-price{
+          font-size: 1.5rem !important;
+          font-weight: 600;
+        }
+        .good-shipping-cost,.good-stock{
+          font-size: 0.9rem !important;
+          font-weight: 500;
+          color: #818d9c;
+        }
+        .card-text-gray{
+          color:#babfcc;
+        }
+        .card-text-green{
+          color:#4cd9a0;
+        }
+        .card-text-red{
+          color:#ed6a83;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row bg-white  border rounded box-shadows  m-2 p-3 justify-content-end  ">
+        <div class=" col-md-3 col-sm-6 d-flex align-content-center">
+          <span class="pt-2">Showing 1-24 of 205 Products</span>
+        </div>
+        
+        <div class=" col-md-3 col-sm-6 ml-auto text-right  d-inline-flex justify-content-md-end  "> 
+          <span class="mr-1 align-self-center">Sort by:</span>
+           <div class="dropdown d-inline-flex ">
+              <a class="btn btn-light dropdown-toggle  border-gray" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
+                Best Match
+                <i class="fa-solid fa-angle-down"></i>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">Popular</a>
+                <a class="dropdown-item" href="#">Newest</a>
+                <a class="dropdown-item" href="#">Price</a>
+              </div>
+           </div>
+           <button type="button" class="btn btn-outline-secondary border-0 py-0  ml-1 align-self-center"> 
+              <i class="fa-solid fa-list"></i>
+          </button>
+        </div>
+    </div>
+</div>
+<!-- 下方商品列表-->
+<div class="container-fluid">
+	<div class="row  bg-white  border rounded box-shadows  mx-2 my-3 p-3">
+    <!--START OF 商品01 -->
+		<div id="good01" class="col-md-4 mb-4">
+      <div class="card  h-100 border-gray" style="">
+       <h6 class="py-1 badge badge-pill badge-success  text-white position-absolute" style="top: 0.5rem; right: 0.5rem">New</h6>
+        <img class="card-img-top" src="images/good_photo_01.jpg" alt="Card image cap">
+
+        <div class="card-body py-4 px-3">
+
+          <h5 class="card-title mt-0 mb-1" style="">
+            Apple iMac Pro(27-inch with Retina 5k Display,3.0GHz 10-core Intel Xeon W,1TB SSD)
+          </h5>
+         
+          <p class="good-category mt-0 card-text-gray " style=""> Computer & Accessories </p> 
+          <p>
+            <span class="good-price text-warning " style=" ">$1199.5</span>  
+            <small class="card-text-gray text-decoration-line-through align-text-top font-weight-bolder ">$2399</small>
+          </p>
+          <p class="good-shipping-cost py-0 my-0" style=" ">
+            Shipping Cost:<span class=" text-muted">$50</span></p>
+          <p class="good-stock  py-0 my-0">Stock:
+            <span class="good-stock-state  card-text-green"  style=" ">Available</span>
+          </p>
+        </div><!--END OF card-body-->
+
+        <div class="card-footer bg-white border-top-0 pt-0 mt-0">
+          <div class="row no-gutters">
+            <div class="col-md-8">
+              <div class="d-flex justify-content-start text-warning my-2">
+                <div class="bi-star-fill "></div>
+                <div class="bi-star-fill "></div>
+                <div class="bi-star-fill "></div>
+                <div class="bi-star-fill "></div>
+                <div class="bi-star-fill text-gray"></div>
+                <span class="text-muted ">(8)</span>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end align-self-center">
+              <button type="button" class="h-90 btn btn-outline-secondary box-shadows py-1 px-3"> 
+                <i class="bi bi-suit-heart"></i>
+              </button>
+              <button type="button" class="h-90 btn btn-outline-secondary ml-1 box-shadows py-1 px-3"> 
+                <i class="fa-solid fa-cart-arrow-down"></i>
+              </button>
+            </div>
+          </div><!--END OF row no-gutters-->
+        </div><!--END OF Card-footer-->
+
+      </div><!--END OF card-->
+
+	  </div>
+    <!--END OF 商品01 -->
+
+    <!--START OF 商品02 -->
+		<div id="good02" class="col-md-4 mb-4">
+      <div class="card  h-100 border-gray" style="">
+       <h6 class="py-1 badge badge-pill badge-success  text-white position-absolute" style="top: 0.5rem; right: 0.5rem">New</h6>
+        <img class="card-img-top" src="images/good_photo_02.jpg" alt="Card image cap">
+
+        <div class="card-body py-4 px-3">
+
+          <h5 class="card-title mt-0 mb-1" style="">
+            Apple MacBook Pro(15" Retina,Touch Bar,2.2GHz 6-Core Intel Core i7,16GB RAM,256GB SSD)-Space Gray(Latest Model)
+          </h5>
+         
+          <p class="good-category mt-0 card-text-gray " style="">Computer & Accessories </p> 
+          <p>
+            <span class="good-price text-warning " style=" "> $7199</span>  
+            <small class="card-text-gray text-decoration-line-through align-text-top font-weight-bolder "> </small>
+          </p>
+          <p class="good-shipping-cost py-0 my-0" style=" ">
+            Shipping Cost:<span class=" text-muted">$65</span></p>
+          <p class="good-stock  py-0 my-0">Stock:
+            <span class="good-stock-state  card-text-red"  style=" ">Sold-Out</span>
+          </p>
+        </div><!--END OF card-body-->
+
+        <div class="card-footer bg-white border-top-0 pt-0 mt-0">
+          <div class="row no-gutters">
+            <div class="col-md-8">
+              <div class="d-flex justify-content-start text-warning my-2">
+                <div class="bi-star-fill "></div>
+                <div class="bi-star-fill "></div>
+                <div class="bi-star-fill "></div>
+                <div class="bi-star-fill "></div>
+                <div class="bi-star-half "></div>
+                <span class="text-muted ">(20)</span>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end align-self-center">
+              <button type="button" class="h-90 btn btn-outline-secondary box-shadows py-1 px-3"> 
+                <i class="bi bi-suit-heart"></i>
+              </button>
+              <button type="button" class="h-90 btn btn-outline-secondary ml-1 box-shadows py-1 px-3"> 
+                <i class="fa-solid fa-cart-arrow-down"></i>
+              </button>
+            </div>
+          </div><!--END OF row no-gutters-->
+        </div><!--END OF Card-footer-->
+
+      </div><!--END OF card-->
+
+	  </div>
+    <!--END OF 商品02 -->
+    
+    <!--START OF 商品03 -->
+		<div id="good03" class="col-md-4 mb-4">
+      <div class="card  h-100 border-gray" style="">
+        <!--<h6 class="py-1 badge badge-pill badge-success  text-white position-absolute" style="top: 0.5rem; right: 0.5rem">New</h6> -->
+        <img class="card-img-top" src="images/good_photo_03.jpg" alt="Card image cap">
+
+        <div class="card-body py-4 px-3">
+
+          <h5 class="card-title mt-0 mb-1" style="">
+            Apple iPad Air 2019(3G RAM,128GB ROM,8MP Main Camera)
+          </h5>
+         
+          <p class="good-category mt-0 card-text-gray " style="">Mobile & Tabs</p> 
+          <p>
+            <span class="good-price text-warning " style=" ">$562.5</span>  
+            <small class="card-text-gray text-decoration-line-through align-text-top font-weight-bolder ">$750</small>
+          </p>
+          <p class="good-shipping-cost py-0 my-0" style=" ">
+            Shipping Cost:<span class=" text-muted">$47</span></p>
+          <p class="good-stock  py-0 my-0">Stock:
+            <span class="good-stock-state  card-text-green"  style=" ">Available</span>
+          </p>
+        </div><!--END OF card-body-->
+
+        <div class="card-footer bg-white border-top-0 pt-0 mt-0">
+          <div class="row no-gutters">
+            <div class="col-md-8">
+              <div class="d-flex justify-content-start text-warning my-2">
+                <div class="bi-star-fill "></div>
+                <div class="bi-star-fill "></div>
+                <div class="bi-star-half "></div>
+                <div class="bi-star-fill text-gray"></div>
+                <div class="bi-star-fill text-gray"></div>
+                <span class="text-muted ">(14)</span>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end align-self-center">
+              <button type="button" class="h-90 btn btn-outline-secondary box-shadows py-1 px-3"> 
+                <i class="bi bi-suit-heart"></i>
+              </button>
+              <button type="button" class="h-90 btn btn-outline-secondary ml-1 box-shadows py-1 px-3"> 
+                <i class="fa-solid fa-cart-arrow-down"></i>
+              </button>
+            </div>
+          </div><!--END OF row no-gutters-->
+        </div><!--END OF Card-footer-->
+
+      </div><!--END OF card-->
+
+	  </div>
+    <!--END OF 商品03 -->
+    
+    <!--START OF 商品04 -->
+		<div id="good04" class="col-md-4 mb-4">
+      <div class="card  h-100 border-gray" style="">
+        <!--<h6 class="py-1 badge badge-pill badge-success  text-white position-absolute" style="top: 0.5rem; right: 0.5rem">New</h6> -->
+        <img class="card-img-top" src="images/good_photo_04.jpg" alt="Card image cap">
+
+        <div class="card-body py-4 px-3">
+
+          <h5 class="card-title mt-0 mb-1" style="">
+            Apple iphone XS Max(4GB RAM512GB ROM,12MP Main Camera)
+          </h5>
+         
+          <p class="good-category mt-0 card-text-gray " style="">Mobile & Tabs </p> 
+          <p>
+            <span class="good-price text-warning " style=" ">$1050</span>  
+            <small class="card-text-gray text-decoration-line-through align-text-top font-weight-bolder "> </small>
+          </p>
+          <p class="good-shipping-cost py-0 my-0" style=" ">
+            Shipping Cost:<span class=" text-muted">$65</span></p>
+          <p class="good-stock  py-0 my-0">Stock:
+            <span class="good-stock-state  card-text-green"  style=" ">Available</span>
+          </p>
+        </div><!--END OF card-body-->
+
+        <div class="card-footer bg-white border-top-0 pt-0 mt-0">
+          <div class="row no-gutters">
+            <div class="col-md-8">
+              <div class="d-flex justify-content-start text-warning my-2">
+                <div class="bi-star-fill "></div>
+                <div class="bi-star-fill "></div>
+                <div class="bi-star-fill "></div>
+                <div class="bi-star-half "></div>
+                <div class="bi-star-fill text-gray"></div>
+                <span class="text-muted ">(13)</span>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end align-self-center">
+              <button type="button" class="h-90 btn btn-outline-secondary box-shadows py-1 px-3"> 
+                <i class="bi bi-suit-heart"></i>
+              </button>
+              <button type="button" class="h-90 btn btn-outline-secondary ml-1 box-shadows py-1 px-3"> 
+                <i class="fa-solid fa-cart-arrow-down"></i>
+              </button>
+            </div>
+          </div><!--END OF row no-gutters-->
+        </div><!--END OF Card-footer-->
+
+      </div><!--END OF card-->
+
+	  </div>
+    <!--END OF 商品04 -->
+    
+    <!--START OF 商品05 -->
+		<div id="good05" class="col-md-4 mb-4">
+      <div class="card  h-100 border-gray" style="">
+       <h6 class="py-1 badge badge-pill badge-success  text-white position-absolute" style="top: 0.5rem; right: 0.5rem">New</h6>
+        <img class="card-img-top" src="images/good_photo_05.jpg" alt="Card image cap">
+
+        <div class="card-body py-4 px-3">
+
+          <h5 class="card-title mt-0 mb-1" style="">
+            Canon Standard Zoom Lens
+          </h5>
+         
+          <p class="good-category mt-0 card-text-gray " style="">Camera</p> 
+          <p>
+            <span class="good-price text-warning " style=" ">$400</span>  
+            <small class="card-text-gray text-decoration-line-through align-text-top font-weight-bolder ">$500</small>
+          </p>
+          <p class="good-shipping-cost py-0 my-0" style=" ">
+            Shipping Cost:<span class=" text-muted">$60</span></p>
+          <p class="good-stock  py-0 my-0">Stock:
+            <span class="good-stock-state  card-text-red"  style=" ">Solid Out</span>
+          </p>
+        </div><!--END OF card-body-->
+
+        <div class="card-footer bg-white border-top-0 pt-0 mt-0">
+          <div class="row no-gutters">
+            <div class="col-md-8">
+              <div class="d-flex justify-content-start text-warning my-2">
+                <div class="bi-star-fill "></div>
+                <div class="bi-star-fill "></div>
+                <div class="bi-star-fill "></div>
+                <div class="bi-star-fill "></div>
+                <div class="bi-star-fill text-gray"></div>
+                <span class="text-muted ">(10)</span>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end align-self-center">
+              <button type="button" class="h-90 btn btn-outline-secondary box-shadows py-1 px-3"> 
+                <i class="bi bi-suit-heart"></i>
+              </button>
+              <button type="button" class="h-90 btn btn-outline-secondary ml-1 box-shadows py-1 px-3"> 
+                <i class="fa-solid fa-cart-arrow-down"></i>
+              </button>
+            </div>
+          </div><!--END OF row no-gutters-->
+        </div><!--END OF Card-footer-->
+
+      </div><!--END OF card-->
+
+	  </div>
+    <!--END OF 商品05 -->
+    
+    <!--START OF 商品06 -->
+		<div id="good06" class="col-md-4 mb-4">
+      <div class="card  h-100 border-gray" style="">
+       <h6 class="py-1 badge badge-pill badge-success  text-white position-absolute" style="top: 0.5rem; right: 0.5rem">New</h6>
+        <img class="card-img-top" src="images/good_photo_06.jpg" alt="Card image cap">
+
+        <div class="card-body py-4 px-3">
+
+          <h5 class="card-title mt-0 mb-1" style="">
+            Logitech G305 Gaming Mouse
+          </h5>
+         
+          <p class="good-category mt-0 card-text-gray " style=""> Computer & Accessories </p> 
+          <p>
+            <span class="good-price text-warning " style=" "> $95</span>  
+            <small class="card-text-gray text-decoration-line-through align-text-top font-weight-bolder "> </small>
+          </p>
+          <p class="good-shipping-cost py-0 my-0" style=" ">
+            Shipping Cost:<span class=" text-muted">$20</span></p>
+          <p class="good-stock  py-0 my-0">Stock:
+            <span class="good-stock-state  card-text-green"  style=" ">Available</span>
+          </p>
+        </div><!--END OF card-body-->
+
+        <div class="card-footer bg-white border-top-0 pt-0 mt-0">
+          <div class="row no-gutters">
+            <div class="col-md-8">
+              <div class="d-flex justify-content-start text-warning my-2">
+                <div class="bi-star-fill "></div>
+                <div class="bi-star-fill "></div>
+                <div class="bi-star-fill "></div>
+                <div class="bi-star-half "></div>
+                <div class="bi-star-fill text-gray"></div>
+                <span class="text-muted ">(6)</span>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end align-self-center">
+              <button type="button" class="h-90 btn btn-outline-secondary box-shadows py-1 px-3"> 
+                <i class="bi bi-suit-heart"></i>
+              </button>
+              <button type="button" class="h-90 btn btn-outline-secondary ml-1 box-shadows py-1 px-3"> 
+                <i class="fa-solid fa-cart-arrow-down"></i>
+              </button>
+            </div>
+          </div><!--END OF row no-gutters-->
+        </div><!--END OF Card-footer-->
+
+      </div><!--END OF card-->
+
+	  </div>
+    <!--END OF 商品06 -->
+
+  </div><!--END of row  bg-white -->
+</div>
+
+</body>
+</html>
